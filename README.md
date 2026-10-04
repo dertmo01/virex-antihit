@@ -1,12 +1,15 @@
 # Virex Anti-Guard
 
-Anti Hit and Auto Run. That is the whole thing — one file, no config, no window.
+Anti Hit and Auto Run. That is the whole thing — one file, no config.
 
 For *Steal An Egg* (placeId `107778070777162`).
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dertmo01/virex-antihit/master/antihit.lua"))()
 ```
+
+A window opens in the top-left corner: two toggles, a live log, drag it anywhere,
+`_` minimizes, `X` hides it. Hiding the window does **not** stop the features.
 
 ## The two functions
 
@@ -45,10 +48,16 @@ A teleport had nothing left to offer.
 | input | what it does |
 |---|---|
 | **R** | walk home / cancel |
+| `_` on the title bar | minimize / restore |
+| `X` on the title bar | hide the window (features keep running) |
+| Anti Hit toggle | start / stop the guard watcher |
+| Auto Run toggle | walk home / cancel |
 | `getgenv().VIREX_DISABLE()` | turn both off |
 | `getgenv().VIREX_START()` | turn Anti Hit back on |
 | `getgenv().VIREX_AUTORUN.start()` | walk home |
 | `getgenv().VIREX_AUTORUN.stop()` | cancel the walk |
+
+Re-running the loader replaces the window instead of stacking a second one.
 
 ## How the two cooperate
 
@@ -71,7 +80,7 @@ Recorded here so nobody spends an afternoon rediscovering them:
 ## What is not here
 
 Auto Fetch, egg rarity, RSPY-style probe logging, self-tests, the three tabs, the
-`src/` module split, and the GUI. Those are in
+`src/` module split, and the full GUI. Those are in
 [`dertmo01/virexhub-archive`](https://github.com/dertmo01/virexhub-archive),
 along with the full history of the project this was cut from.
 
